@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <div style="color:black"  class="container-fluid p-3 mb-2 bg-dark" >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    
     <title>toDo</title>
 </head>
-<body>
+<body style="color:black"  class="container-fluid p-3 mb-2 bg-dark" >
     {% include "includes/navbar.html" %}
-    <br><br><br>
- {% block blockname %}
-    <div style="margin-top: 100px;" class="container">
+    
+    {% block blockname %}
+
+
+    <div style="color:black"  class="container-fluid" >
+        <br><br><br>
         <h3>Todo List</h3>
         <hr>
 
         <form action="/add" method="post">
             <div class="form-group">
                 <label for="formGroupExampleInput">Todo Başlık</label>
-                <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder="Todo Giriniz..."> <br>
-                <button type="submit" class="btn btn-danger">Ekle</button>
+                <input type="text" class="form-control bg-dark  " name="title" id="formGroupExampleInput" placeholder="Todo Giriniz..."> <br>
+                <button type="submit" class="btn btn-secondary">Ekle</button>
                 
             </div>
             
@@ -28,7 +32,8 @@
         <form action="/archieve" method="post">
             <div class="form-group">
 
-                <button type="submit" class="btn btn-danger">Arşive Git</button>
+                <button type="submit" class="btn btn-info">Arşive Git</button>
+  
                 
             </div>
             
@@ -59,10 +64,10 @@
                             {% endif %}
                         
                         
-                        <td><a href="/complete/{{todo.id}}" class="btn btn-danger">Tamamla</a></td>
-                        <td><a href="/back/{{todo.id}}" class="btn btn-danger">Geri AL</a></td>
+                        <td><a href="/complete/{{todo.id}}" class="btn btn-success">Tamamla</a></td>
+                        <td><a href="/back/{{todo.id}}" class="btn btn-warning">Geri AL</a></td>
                         <td><a href="/delete/{{todo.id}}" class="btn btn-danger">Sil</a></td>
-                        <td><a href="/archieve/{{todo.id}}" class="btn btn-danger">Arşivle</a></td>
+                        <td><a href="/archieve/{{todo.id}}" class="btn btn-info">Arşivle</a></td>
                         
                     </tr>
                 {% else %}
@@ -73,7 +78,8 @@
           </table>
 
     </div>
-
+    <div style="color:black"  class="container-fluid p-3 mb-2 bg-dark" >
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -81,8 +87,6 @@
 
       
     {% endblock blockname %}
-
-
    
 </body>
 </html>
